@@ -70,7 +70,10 @@ public class Articulos implements Serializable {
     @ManyToOne
     private Marcas marca;
 
+    
+    
     public Articulos() {
+        
     }
 
     public Articulos(Integer id) {

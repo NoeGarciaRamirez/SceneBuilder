@@ -5,7 +5,7 @@
     <class>basededatos.Articulos</class>
     <class>basededatos.Marcas</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby:/User/noegr/NetBeansProjects/SceneBuilder;create=true"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby:BaseDatosSceneBuilder;create=true"/>
       <property name="javax.persistence.jdbc.user" value="APP"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
       <property name="javax.persistence.jdbc.password" value="1234"/>

@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.layout.StackPane;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,13 +28,18 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage1) throws IOException {
+        
+        StackPane rootMain = new StackPane();
+        
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("primary.fxml"));
-        Parent root = fxmlLoader.load();
+        Parent rootArticulosView = fxmlLoader.load();
+        
+        rootMain.getChildren().add(rootArticulosView);
         
         emf = Persistence.createEntityManagerFactory("SceneBuilderPU");
         em = emf.createEntityManager();
         
-        scene = new Scene(root, 300, 250);
+        scene = new Scene(rootMain, 530, 650);
         stage1.setTitle("Artículos Ordenador");
         stage1.setScene(scene);
         stage1.show();
@@ -40,7 +48,9 @@ public class App extends Application {
         primaryController.setEntityManager(em);
 
         primaryController.cargarTodosArticulos();
+       
     }
+    
 
     @Override
 public void stop() throws Exception {
